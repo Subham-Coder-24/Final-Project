@@ -18,12 +18,13 @@ const Quiz = () => {
   const [results, setResults] = useState(null);
   const [score, setScore] = useState(0);
   const navigate = useNavigate();
+  // console.log(quiz);
 
   useEffect(() => {
     axios
       .get(`http://localhost:4000/api/course/details/${courseID}`)
       .then((response) => {
-        setQuiz(response.data.Quiz);
+        setQuiz(response.data.courseDetails.Quiz);
         setLoading(false);
       })
       .catch((error) => {
@@ -91,7 +92,7 @@ const Quiz = () => {
   };
   if (loading) return <p className="text-center">Loading questions...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
-  
+
   return (
     <div className="container">
       <h1>Test Window</h1>

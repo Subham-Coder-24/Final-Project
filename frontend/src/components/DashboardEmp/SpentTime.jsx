@@ -26,7 +26,6 @@ const SpentTime = () => {
   const [timeSpentData, setTimeSpentData] = useState([]);
   const [user, setUser] = useState(null);
 
-
   // Fetch time spent data from the API
   const fetchTimeSpent = async (employeeId) => {
     try {
@@ -41,11 +40,11 @@ const SpentTime = () => {
   };
 
   useEffect(() => {
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-   
-     if (storedUser) {
-       setUser(storedUser);
-     }
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (storedUser) {
+      setUser(storedUser);
+    }
     fetchTimeSpent(storedUser.EmployeeID); // Fetch time spent for employeeId 1
   }, []);
 
@@ -55,9 +54,9 @@ const SpentTime = () => {
     datasets: [
       {
         label: "Time Spent (Seconds)", // Label for the dataset
-        data: timeSpentData.map((course) => course.totalTimeSpent/60), // Time spent data
-        backgroundColor: "rgba(153, 102, 255, 0.6)", // Bar color
-        borderColor: "rgba(153, 102, 255, 1)",
+        data: timeSpentData.map((course) => course.totalTimeSpent / 60), // Time spent data
+        backgroundColor: "#4ED9D9", // Bar color
+        borderColor: "#4ED9D9",
         borderWidth: 1,
       },
     ],
@@ -95,7 +94,6 @@ const SpentTime = () => {
       },
     },
   };
-  
 
   return (
     <div className="dashboard-emp">

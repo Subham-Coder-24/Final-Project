@@ -1,5 +1,6 @@
 .enroll_main {
   font-family: Arial, sans-serif;
+  padding: 0px 6rem;
 }
 .enroll_main h1 {
   margin: 3rem 0rem;
@@ -8,6 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  /* justify-content: center; */
 }
 
 .course-item {
@@ -29,8 +31,9 @@
 
 .course-details {
   margin-top: 20px;
-  /* padding: 20px; */
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
 }
 
 .course-details table {
@@ -44,7 +47,9 @@
   padding: 10px;
   border: 1px solid #ddd;
 }
-
+.score_cards {
+  margin-left: 5rem;
+}
 .course-details th {
   background-color: #0c0a0a;
 }
@@ -54,14 +59,9 @@
 }
 .course-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   padding: 20px;
-}
-
-.chart-section {
-  flex: 1;
-  padding: 10px;
 }
 
 .score-details {
@@ -70,7 +70,6 @@
   background-color: #cfcece;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* border-radius: 40%; */
   text-align: center;
   padding: 60px;
 }

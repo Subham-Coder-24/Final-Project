@@ -139,7 +139,7 @@ const CourseDetails1 = ({ course, score, percentage }) => {
       {
         label: "Time Spent (min)",
         data: timeSpentData, // Time spent per module
-        backgroundColor: "rgba(75, 192, 192, 0.2)", // Bar color
+        backgroundColor: "rgba(75, 192, 192 ,0.8)", // Bar color
         borderColor: "rgba(75, 192, 192, 1)", // Border color
         borderWidth: 1,
       },
@@ -172,9 +172,14 @@ const CourseDetails1 = ({ course, score, percentage }) => {
         <h2>
           Time Spent on each Modules in course <em>"{course.courseName}"</em>
         </h2>
-        <Bar data={data} options={options} />
+        <div
+          className="chart-container"
+          style={{ width: "1000px", height: "500px" }}
+        >
+          <Bar data={data} options={options} />
+        </div>
       </div>
-      <div className="">
+      <div className="score_cards">
         <div className="score-card">
           <h3>Participation Rates</h3>
           <div className="score-details">

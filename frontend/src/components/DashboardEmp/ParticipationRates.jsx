@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import {
@@ -24,10 +24,9 @@ ChartJS.register(
 
 const ParticipationRates = () => {
   const [participationRates, setParticipationRates] = useState([]);
-console.log(participationRates);
+  console.log(participationRates);
 
   const fetchParticipationPercentage = async (employeeId) => {
-
     try {
       const { data } = await axios.post(
         "http://localhost:4000/api/dashboard/employee/participationPercetage",
@@ -46,22 +45,21 @@ console.log(participationRates);
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     fetchParticipationPercentage(storedUser.EmployeeID); // Fetch participation for employeeId 1
-  
   }, []);
 
   // Prepare data for horizontal bar chart
   const chartData = {
     labels: participationRates.map((course) => {
       // Truncate course name and add ellipsis if necessary
-      return course.courseName.length > 20 
-        ? `${course.courseName.slice(0, 20)}...` 
+      return course.courseName.length > 20
+        ? `${course.courseName.slice(0, 20)}...`
         : course.courseName;
     }), // Course names as labels// Course names as labels
     datasets: [
       {
         label: "Participation Percentage",
         data: participationRates.map((course) => course.participationRate), // Participation percentages as data
-        backgroundColor: "rgba(75, 192, 192, 0.6)", // Bar color
+        backgroundColor: "rgba(75, 192, 192, 0.8)", // Bar color
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
