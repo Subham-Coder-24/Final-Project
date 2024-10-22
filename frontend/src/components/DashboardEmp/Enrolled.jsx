@@ -66,7 +66,7 @@ const Enrolled = () => {
 
   return (
     <div className="enroll_main">
-      <h1>All Enrolled Courses</h1>
+      <h1 className="heading-with-lines">All Enrolled Courses</h1>
       {!courses.length && <p>No enrolled course found </p>}
       <div className="course-list">
         {courses.map((course) => (

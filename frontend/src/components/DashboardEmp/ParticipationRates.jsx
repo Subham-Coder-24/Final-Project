@@ -92,7 +92,7 @@ const ParticipationRates = () => {
 
   return (
     <div className="dashboard-emp">
-      <h2>Participation Rates</h2>
+      <h1 className="heading-with-lines">Participation Rates</h1>
       {participationRates.length > 0 ? (
         <Bar data={chartData} options={chartOptions} />
       ) : (

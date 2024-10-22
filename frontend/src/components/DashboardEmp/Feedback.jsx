@@ -61,7 +61,7 @@ const Feedback = () => {
 
   return (
     <div className="feedback-form">
-      <h2>Submit Feedback for Course</h2>
+      <h1 className="heading-with-lines">Submit Feedback for Course</h1>
       {successMessage && (
         <div className="success-message">{successMessage}</div>
       )}

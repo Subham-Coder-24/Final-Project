@@ -7,11 +7,14 @@ const CourseScoreTable = () => {
 
   const fetchScore = async (employeeId) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/dashboard/employee/score', { EmployeeID: employeeId });
+      const response = await axios.post(
+        "http://localhost:4000/api/dashboard/employee/score",
+        { EmployeeID: employeeId }
+      );
       const scores = response.data.data;
       setScoreData(scores);
     } catch (error) {
-      console.error('Error fetching scores:', error);
+      console.error("Error fetching scores:", error);
     }
   };
 
@@ -22,7 +25,7 @@ const CourseScoreTable = () => {
 
   return (
     <div className="score-table">
-      <h2>Course Quiz Scores</h2>
+      <h1 className="heading-with-lines">Course Quiz Scores</h1>
       {scoreData.length > 0 ? (
         <table>
           <thead>
@@ -37,7 +40,9 @@ const CourseScoreTable = () => {
               <tr key={course.CourseID}>
                 <td>{course.CourseID}</td>
                 <td>{course.CourseName}</td>
-                <td>{course.QuizScore !== null ? course.QuizScore : "Not Taken"}</td>
+                <td>
+                  {course.QuizScore !== null ? course.QuizScore : "Not Taken"}
+                </td>
               </tr>
             ))}
           </tbody>

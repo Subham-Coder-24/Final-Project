@@ -97,7 +97,7 @@ const SpentTime = () => {
 
   return (
     <div className="dashboard-emp">
-      <h2>Time spent on Courses</h2>
+      <h1 className="heading-with-lines">Time spent on Courses</h1>
       {timeSpentData.length > 0 ? (
         <Bar data={chartData} options={chartOptions} />
       ) : (
